@@ -1,10 +1,10 @@
 <template>
   <v-row justify="center">
     <v-col
-      cols="12"
-      sm="10"
-      md="8"
-      lg="6"
+      cols="10"
+      sm="8"
+      md="6"
+      lg="4"
     >
       <v-card ref="form">
         <v-card-title>Complaint Crime</v-card-title>
@@ -113,7 +113,6 @@
 
 
 <script>
-// import firebase from "firebase/app"
 import {addDatas } from "../service"
   export default {
     name:'Home',
