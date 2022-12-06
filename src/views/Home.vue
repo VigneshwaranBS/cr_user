@@ -8,6 +8,7 @@
       lg="4"
     >
       <v-card ref="form">
+        <v-card-title >JUSTICE</v-card-title>
         <v-card-title>Complaint Crime</v-card-title>
         <v-card-text>
           <v-text-field
