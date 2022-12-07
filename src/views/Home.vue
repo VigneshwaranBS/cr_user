@@ -1,4 +1,5 @@
 <template>
+  <main>
   <v-row justify="center">
     <v-col
       cols="10"
@@ -7,6 +8,7 @@
       lg="4"
     >
       <v-card ref="form">
+        <v-card-title >JUSTICE</v-card-title>
         <v-card-title>Complaint Crime</v-card-title>
         <v-card-text>
           <v-text-field
@@ -57,6 +59,16 @@
             dense
             v-model="crimetime"
             required
+            type="time"
+          ></v-text-field>
+
+          <v-text-field
+            label="Crime Date *"
+            filled
+            dense
+            v-model="crimedate"
+            required
+            type="date"
           ></v-text-field>
           <v-text-field
             label="Crime Evidance *"
@@ -65,6 +77,11 @@
             v-model="crimeevidance"
             required
           ></v-text-field>
+          <v-file-input
+            label="Upload Evidance *"
+            filled
+            v-model="evidancefile"
+          ></v-file-input>
           <v-btn
             depressed
              color="primary"
@@ -109,6 +126,8 @@
       </v-card>
     </v-col>
   </v-row>
+  </main>
+
 </template>
 
 
@@ -124,6 +143,7 @@ import {addDatas } from "../service"
       crimeplace:null,
       crimetype:null,
       crimetime:null,
+      crimedate:null,
       crimeevidance:null,
     }),
     methods:{
@@ -137,19 +157,24 @@ import {addDatas } from "../service"
           crimeplace: this.crimeplace,
           crimetype: this.crimetype,
           crimetime: this.crimetime,
+          crimedate:this.crimedate,
           crimeevidance: this.crimeevidance,
 
         };
         console.log("data added", datas);
 
       await addDatas.addData(datas);
-      alert("Complaint Registered Successfully !")
+      // alert("Complaint Registered Successfully !")
     },
   }
    
   }
-</script>
+</script >
 
-<style>
+<style lang="scss" scoped>
+main{
+  background: rgb(174,214,238);
+background: linear-gradient(90deg, rgba(174,214,238,1) 72%, rgba(148,231,233,1) 100%);
+}
 
 </style>
